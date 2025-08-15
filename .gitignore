@@ -1,0 +1,7 @@
+.env
+Uploads/
+temp/
+__pycache__/
+*.pyc
+venv/
+static/*.mp3

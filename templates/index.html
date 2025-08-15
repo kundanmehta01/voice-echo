@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Voice Agent</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h1>🎙️ AI Voice Agent</h1>
+
+  <!-- Recording Controls -->
+  <div id="recordingStatus">
+    <span>🔴 Recording...</span>
+    <span id="timer">00:00</span>
+  </div>
+
+  <button id="recordBtn" class="record-btn">🎤 Start Recording</button>
+
+  <!-- Status & Responses -->
+  <div id="uploadStatus"></div>
+  <div id="echoAudio"></div>
+  <div id="transcriptDisplay"></div>
+
+  <!-- Uploaded Audio Section -->
+  <button id="uploadedAudiosBtn">📂 Uploaded Audios</button>
+  <div id="uploadedAudiosList" style="display:none;"></div>
+
+  <!-- Clear Chat -->
+  <button id="clearChatBtn">🗑️ Clear Chat History</button>
+
+  <!-- Popup Player -->
+  <div id="popupContainer"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* ====== General Layout ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* ====== Chat Section ====== */
+.chat-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.chat-message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+
+.chat-message.user {
+    background: rgba(0, 123, 255, 0.3);
+    align-self: flex-end;
+}
+
+.chat-message.bot {
+    background: rgba(255, 255, 255, 0.2);
+    align-self: flex-start;
+}
+
+/* ====== Record Button ====== */
+#recordBtn {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 28px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+/* Start Recording Style */
+#recordBtn.start {
+    background: linear-gradient(145deg, #28a745, #218838);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
+}
+
+#recordBtn.start:hover {
+    background: linear-gradient(145deg, #34d058, #28a745);
+}
+
+/* Stop Recording Style (with pulse) */
+#recordBtn.stop {
+    background: linear-gradient(145deg, #dc3545, #c82333);
+    box-shadow: 0 5px 20px rgba(220, 53, 69, 0.6);
+    animation: pulse 1.2s infinite;
+}
+
+#recordBtn.stop:hover {
+    background: linear-gradient(145deg, #e55365, #dc3545);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+/* ====== Buttons ====== */
+button {
+    background: #007bff;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* ====== Uploaded Audios ====== */
+.uploaded-audios {
+    margin-top: 20px;
+}
+
+.uploaded-audio {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.uploaded-audio audio {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+
+
+
+  /* background: linear-gradient(135deg, #ff758c, #ff7eb3); */
+    /* background: linear-gradient(45deg, #ff6a00, #ffcc00); */
+
+
