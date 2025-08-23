@@ -1,3 +1,4 @@
+
 /* ====== General Layout ====== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -113,6 +114,21 @@ button {
 
 button:hover {
     background: #0056b3;
+}
+
+.transcript-box, .chat-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 15px 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.transcript-box h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #444;
 }
 
 /* ====== Uploaded Audios ====== */

@@ -2,35 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Voice Agent</title>
   <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <h1>🎙️ AI Voice Agent</h1>
+  <div class="container">
+    <h1>🎙️ AI Voice Agent</h1>
 
-  <!-- Recording Controls -->
-  <div id="recordingStatus">
-    <span>🔴 Recording...</span>
-    <span id="timer">00:00</span>
-  </div>
+    <!-- Recording Controls -->
+    <div class="agent-controls">
+      <button id="recordBtn" class="record-btn" onclick="toggleRecording()" aria-pressed="false" aria-label="Record or stop">
+        <span class="record-icon"><i class="fas fa-microphone"></i></span>
+        <span id="recordLabel">Start Recording</span>
+        <span class="vu" aria-hidden="true">
+          <span class="bar b1"></span>
+          <span class="bar b2"></span>
+          <span class="bar b3"></span>
+        </span>
+      </button>
+      <select id="replyVoice" class="voice-select" aria-label="Select reply voice">
+        <option value="en-US-natalie" selected>Natalie · US</option>
+        <option value="en-IN-ashwin">Ashwin · IN</option>
+        <option value="en-GB-harry">Harry · UK</option>
+      </select>
+      <button id="autoToggle" class="btn btn-accent" onclick="toggleAutoStream()">
+        <i class="fas fa-bolt"></i> Enable Auto-Stream
+      </button>
+    </div>
 
-  <button id="recordBtn" class="record-btn">🎤 Start Recording</button>
+    <!-- Status -->
+    <div id="uploadStatus" class="status-text"></div>
 
-  <!-- Status & Responses -->
-  <div id="uploadStatus"></div>
-  <div id="echoAudio"></div>
-  <div id="transcriptDisplay"></div>
+    <!-- Live Transcription -->
+    <div id="chatBubble" class="chat-bubble" style="display:none; margin-top: 1em;">
+      <div class="user-msg"><strong>🧑 You:</strong> <span id="bubbleUser"></span></div>
+      <div class="ai-msg"><strong>🤖 AI:</strong> <span id="bubbleAI"></span></div>
+    </div>
 
-  <!-- Uploaded Audio Section -->
-  <button id="uploadedAudiosBtn">📂 Uploaded Audios</button>
-  <div id="uploadedAudiosList" style="display:none;"></div>
+    <!-- Chat History -->
+    <div id="chatHistoryCard" class="chat-history-card" style="margin-top: 1.5em;">
+      <div class="history-title" style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+        <span>⚡ Chat History:</span>
+        <div style="display:flex; gap:8px;">
+          <button id="clearChatBtn" class="btn btn-secondary" style="padding:0.45em 0.9em; font-size:0.9em;" onclick="clearHistory()">
+            <i class="fas fa-broom"></i> Clear
+          </button>
+          <button id="scrollTopBtn" class="btn btn-secondary" style="padding:0.45em 0.9em; font-size:0.9em;" onclick="scrollHistoryToTop()">
+            <i class="fas fa-arrow-up"></i> Top
+          </button>
+          <button id="scrollBottomBtn" class="btn btn-secondary" style="padding:0.45em 0.9em; font-size:0.9em;" onclick="scrollHistoryToBottom()">
+            <i class="fas fa-arrow-down"></i> Bottom
+          </button>
+        </div>
+      </div>
+      <div id="transcriptDisplay" class="chat-box"></div>
+    </div>
 
-  <!-- Clear Chat -->
-  <button id="clearChatBtn">🗑️ Clear Chat History</button>
+    <!-- Uploaded Audio Section -->
+    <button id="uploadedAudiosBtn">📂 Uploaded Audios</button>
+    <div id="uploadedAudiosList" style="display:none;"></div>
 
-  <!-- Popup Player -->
-  <div id="popupContainer"></div>
+    <!-- Popup Player -->
+    <div id="popupContainer"></div>
 
-  <script src="/static/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
